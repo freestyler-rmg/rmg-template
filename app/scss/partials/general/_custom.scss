@@ -18,6 +18,19 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
 }
+
+@mixin tablet {
+  @media only screen and (min-width: 768px) { @content; }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: 1280px) { @content; }
+}
+
+@mixin mobile {
+  @media only screen and (max-width: 767px) { @content; }
+}
+
 h1.pic { color: transparent; font-size: 0; text-indent: -9999999px; } /* if you need a heading without text, create another css with name exactly like this and add background pic */
 
 a {

@@ -14,7 +14,9 @@ var imagemin = require('gulp-imagemin');
 var cache = require('gulp-cache');
 var del = require('del');
 var runSequence = require('run-sequence');
+var notify = require("gulp-notify");
 var browserSync = require('browser-sync').create();
+
 
 // Start browserSync server
 // -------
@@ -25,6 +27,7 @@ gulp.task('browserSync', function() {
     },
   })
 });
+
 
 // concatenates any number of CSS and JavaScript files into a single file
 // -------
@@ -38,6 +41,7 @@ gulp.task('useref', function(){
     .pipe(gulp.dest('dist'))
 });
 
+
 // optimizing image
 // -------
 gulp.task('images', function(){
@@ -50,29 +54,28 @@ gulp.task('images', function(){
     .pipe(gulp.dest('dist/img'))
 });
 
+
 // copy fonts from app/ to dist/
 // -------
 gulp.task('fonts', function() {
-  
-  console.log('--> ini calback FONTS!!!');
-  
   return gulp.src('app/fonts/**/*')
   .pipe(gulp.dest('dist/fonts'))
 });
 
+
 // compile scss to css
 // -------
 gulp.task('sass', function(){
-  
-  console.log('--> ini calback SASS!!!');
-
   return gulp.src('app/scss/**/*.scss')
-    .pipe(sass().on('error', sass.logError)) // Using gulp-sass
+    .pipe(sass().on('error', notify.onError(
+      function(error) {return '\nProblem file : ' + error.message;}
+    )))
     .pipe(gulp.dest('app/css'))
     .pipe(browserSync.reload({
       stream: true
     }))
 });
+
 
 // clean dist/ content
 // -------
@@ -80,11 +83,13 @@ gulp.task('clean:dist', function() {
   return del.sync('dist/**/*');
 });
 
+
 // clean cache (mainly for image optimization)
 // -------
 gulp.task('clean:cache', function (callback) {
   return cache.clearAll(callback)
 });
+
 
 // Watchers
 // -------

@@ -1,3 +1,36 @@
+$basic-font: Arial, sans-serif;
+$default-font: "Lucida Sans Unicode", "Lucida Grande", $basic-font;
+$trebuchet-font: "Trebuchet MS", $basic-font;
+$verdana-font: Verdana, Geneva, $basic-font;
+
+
+h1 {
+  font-size: 3.2rem;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2.4rem;
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+h4 {
+  font-size: 1.6rem;
+}
+
+h5 {
+  font-size: 1.4rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+
 em {
   font-style: italic;
 }
@@ -25,4 +58,31 @@ select, option {
 button {
   border: 0;
   cursor: pointer;
+}
+
+ul, ol {
+  list-style-type: none;
+}
+
+
+// additional style
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=search],
+input[type=url],
+input[type=number],
+textarea {
+  border: 1px solid #c6dade;
+  border-radius: .3rem;
+  &:focus {
+    box-shadow: 0 0 .3rem #3498db;
+  }
+}
+
+textarea {
+  resize: vertical;
+  overflow: auto;
+  min-height: 10rem;
+  font-family: inherit;
 }

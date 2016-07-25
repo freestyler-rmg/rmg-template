@@ -20,11 +20,6 @@
 
 $main-font: sans-serif;
 
-
-@mixin desktop {
-  @media only screen and (min-width: 767px) { @content; }
-}
-
 body {
   font-family: $main-font;
   color: #707070;
