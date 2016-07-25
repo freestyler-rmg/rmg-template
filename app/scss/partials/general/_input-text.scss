@@ -1,0 +1,20 @@
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=search],
+input[type=url],
+input[type=number],
+textarea {
+  border: 1px solid #c6dade;
+  border-radius: .3rem;
+  &:focus {
+    box-shadow: 0 0 .3rem #3498db;
+  }
+}
+
+textarea {
+  resize: vertical;
+  overflow: auto;
+  min-height: 10rem;
+  font-family: inherit;
+}

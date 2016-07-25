@@ -1,0 +1,28 @@
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}
+
+
+a {
+  font-weight: normal;
+  outline: 0;
+  &:hover, &:active, &:focus {
+    outline: 0;
+  }
+}
+
+select, option {
+  outline: 0;
+  &:active, &:hover {
+    outline: 0;
+  }
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}

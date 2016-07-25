@@ -1,0 +1,115 @@
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;  /* 1rem ~ 10px */
+}
+
+body {
+  //font-family: $basic-font;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+h1.pic { color: transparent; font-size: 0; text-indent: -9999999px; } /* if you need a heading without text, create another css with name exactly like this and add background pic */
+
+a {
+  text-decoration: none;
+  &:hover, &:active {
+    outline: none;
+  }
+}
+
+img {
+  max-width: 100%;
+  //width: 100%;
+  vertical-align: top;
+}
+
+.hide-text {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 0;
+}
+
+.bg-size-cover {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+/*
+ * http://webdesignerwall.com/tutorials/css-elastic-videos
+ */
+.responsive-video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+
+.responsive-video-container iframe, .r-vc iframe,
+.responsive-video-container object, .r-vc object,
+.responsive-video-container embed, .r-vc embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.sr-only {
+  border: 0 none;
+  clip: rect(0px, 0px, 0px, 0px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/*
+ * https://css-tricks.com/redesigning-with-sass/
+ */
+@mixin vendorize($property, $value) {
+  -webkit-#{$property}: $value;
+  -moz-#{$property}: $value;
+  -ms-#{$property}: $value;
+  -o-#{$property}: $value;
+  #{$property}: $value;
+}
+
+@mixin linkTextOffscreen() {
+    text-indent: -9999px;
+    overflow: hidden;
+    text-decoration: none;
+    display: block;
+    font-size: 0;
+    text-align: start;
+}
+
+@mixin hoverActiveFocus($property, $value) {
+  &:hover, &:active, &:focus {
+    #{$property}: $value;
+  }
+}
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
