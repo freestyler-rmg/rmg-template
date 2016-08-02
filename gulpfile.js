@@ -76,6 +76,16 @@ gulp.task('sass', function(){
     }))
 });
 
+.gulp.task('sass-lite', function(){
+  return gulp.src('scss/**/*.scss')
+    .pipe(sass().on('error', notify.onError(
+      function(error) {return '\nProblem file : ' + error.message;}
+    )))
+    .pipe(gulp.dest('css'))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
+});
 
 // clean dist/ content
 // -------
@@ -105,6 +115,10 @@ gulp.task('default', function (callback) {
   runSequence(['sass', 'browserSync'], 'watch',
     callback
   )
+});
+
+gulp.task('lite', function (callback){
+  gulp.watch('scss/**/*.scss', ['sass-lite']);
 });
 
 gulp.task('build', function (callback) {
