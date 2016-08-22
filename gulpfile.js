@@ -1,22 +1,33 @@
-/*
+/*/
  * Created by RxMxG
  * Learned from https://css-tricks.com/gulp-for-beginners/
  *
- */
+/*/
 
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var useref = require('gulp-useref');
-var uglify = require('gulp-uglify');
-var gulpIf = require('gulp-if');
-var cssnano = require('gulp-cssnano');
-var imagemin = require('gulp-imagemin');
-var cache = require('gulp-cache');
-var del = require('del');
-var runSequence = require('run-sequence');
-var notify = require("gulp-notify");
-var browserSync = require('browser-sync').create();
+ /*/
+  * Variables
+  * -----------------------------------------------------------------------------
+ /*/
 
+var gulp = require('gulp'),
+    sass = require('gulp-sass'),
+    sourcemaps = require('gulp-sourcemaps'),
+    useref = require('gulp-useref'),
+    uglify = require('gulp-uglify'),
+    gulpIf = require('gulp-if'),
+    cssnano = require('gulp-cssnano'),
+    imagemin = require('gulp-imagemin'),
+    cache = require('gulp-cache'),
+    del = require('del'),
+    runSequence = require('run-sequence'),
+    notify = require("gulp-notify"),
+    browserSync = require('browser-sync').create();
+
+
+/*/
+ * Tasks
+ * -----------------------------------------------------------------------------
+/*/
 
 // Start browserSync server
 // -------
@@ -67,21 +78,12 @@ gulp.task('fonts', function() {
 // -------
 gulp.task('sass', function(){
   return gulp.src('app/scss/**/*.scss')
+    .pipe(sourcemaps.init())
     .pipe(sass().on('error', notify.onError(
       function(error) {return '\nProblem file : ' + error.message;}
     )))
+    .pipe(sourcemaps.write('./maps'))
     .pipe(gulp.dest('app/css'))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
-});
-
-.gulp.task('sass-lite', function(){
-  return gulp.src('scss/**/*.scss')
-    .pipe(sass().on('error', notify.onError(
-      function(error) {return '\nProblem file : ' + error.message;}
-    )))
-    .pipe(gulp.dest('css'))
     .pipe(browserSync.reload({
       stream: true
     }))
@@ -110,6 +112,10 @@ gulp.task('watch', function(){
   gulp.watch('app/js/**/*.js', browserSync.reload); 
 });
 
+/*/
+ * Run 'em Gulp 'em!
+ * -----------------------------------------------------------------------------
+/*/
 
 gulp.task('default', function (callback) {
   runSequence(['sass', 'browserSync'], 'watch',
@@ -117,12 +123,7 @@ gulp.task('default', function (callback) {
   )
 });
 
-gulp.task('lite', function (callback){
-  gulp.watch('scss/**/*.scss', ['sass-lite']);
-});
-
 gulp.task('build', function (callback) {
-  // jadi param callback di bawah itu adalah callback dari masing masing task yang diexecute secara sequence di sini Mas
   runSequence('clean:dist', 
     ['sass', 'useref', 'images', 'fonts'],
     callback
