@@ -21,6 +21,8 @@ var gulp = require('gulp'),
     del = require('del'),
     runSequence = require('run-sequence'),
     notify = require("gulp-notify"),
+    debug = require('gulp-debug'),
+    autoprefixer = require('gulp-autoprefixer'),
     browserSync = require('browser-sync').create();
 
 
@@ -45,6 +47,7 @@ gulp.task('browserSync', function() {
 gulp.task('useref', function(){
   return gulp.src('app/*.html')
     .pipe(useref())
+    .pipe(debug({title: 'useref:'}))
     // Minifies only if it's a JavaScript file
     .pipe(gulpIf('*.js', uglify()))
     // Minifies only if it's a CSS file
@@ -76,6 +79,17 @@ gulp.task('fonts', function() {
 
 // compile scss to css
 // -------
+var autoprefixerOptions = {
+  // Browsers with over 5% market share,
+  // Last 2 versions of all browsers,
+  browsers: ['last 2 versions', '> 5%'],
+
+  // cascade (boolean): 
+  // should Autoprefixer use Visual Cascade, 
+  // if CSS is uncompressed. Default: true
+  cascade: false
+};
+
 gulp.task('sass', function(){
   return gulp.src('app/scss/**/*.scss')
     .pipe(sourcemaps.init())
@@ -83,6 +97,7 @@ gulp.task('sass', function(){
       function(error) {return '\nProblem file : ' + error.message;}
     )))
     .pipe(sourcemaps.write('./maps'))
+    .pipe(autoprefixer(autoprefixerOptions))
     .pipe(gulp.dest('app/css'))
     .pipe(browserSync.reload({
       stream: true

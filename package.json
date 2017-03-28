@@ -1,6 +1,6 @@
 {
-  "name": "testing",
-  "version": "0.0.1",
+  "name": "RMG-Template",
+  "version": "20170328",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -12,8 +12,10 @@
     "browser-sync": "^2.13.0",
     "del": "^2.2.1",
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
     "gulp-cache": "^0.4.5",
     "gulp-cssnano": "^2.1.2",
+    "gulp-debug": "^3.1.0",
     "gulp-if": "^2.0.1",
     "gulp-imagemin": "^3.0.1",
     "gulp-notify": "^2.2.0",
