@@ -96,8 +96,8 @@ gulp.task('sass', function(){
     .pipe(sass().on('error', notify.onError(
       function(error) {return '\nProblem file : ' + error.message;}
     )))
-    .pipe(sourcemaps.write('./maps'))
     .pipe(autoprefixer(autoprefixerOptions))
+    .pipe(sourcemaps.write('./maps'))
     .pipe(gulp.dest('app/css'))
     .pipe(browserSync.reload({
       stream: true
