@@ -16,7 +16,7 @@ Micro clearfix
 
 HTML5Boilerplate
 
-Gulp-autoprefixer
+Gulp task for bower assets
 
 Gulp-uncss
 

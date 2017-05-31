@@ -23,7 +23,8 @@ var gulp = require('gulp'),
     notify = require("gulp-notify"),
     debug = require('gulp-debug'),
     autoprefixer = require('gulp-autoprefixer'),
-    browserSync = require('browser-sync').create();
+    connect = require('gulp-connect-php'),
+    browserSync = require('browser-sync');
 
 
 /*/
@@ -39,6 +40,25 @@ gulp.task('browserSync', function() {
       baseDir: 'app/'
     },
   })
+});
+
+gulp.task('php', function(){
+  connect.server({ base: 'app/', port: 8010, keepalive: true});
+});
+
+gulp.task('php-sync', ['php'], function(){
+  browserSync({
+    proxy: '127.0.0.1:8010',
+    port: 8080,
+    open: true,
+    notify: false
+  });
+});
+
+gulp.task('run-test', ['php-sync'], function(){
+  gulp.watch('**/*.php').on('change', function () {
+    browserSync.reload();
+  });
 });
 
 
