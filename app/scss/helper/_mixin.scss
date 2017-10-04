@@ -1,0 +1,56 @@
+@mixin linkTextOffscreen() {
+    text-indent: -9999px;
+    overflow: hidden;
+    text-decoration: none;
+    display: block;
+    font-size: 0;
+    text-align: start;
+}
+
+@mixin hoverActiveFocus($property, $value) {
+  &:hover, &:active, &:focus {
+    #{$property}: $value;
+  }
+}
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin tablet {
+  @media only screen and (min-width: 768px) { @content; }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: 1280px) { @content; }
+}
+
+@mixin mobile {
+  @media only screen and (max-width: 767px) { @content; }
+}
+
+
+// For Bootstrap
+@mixin xsGrid {
+  @media only screen and (max-width: 575px) { @content; }
+}
+
+@mixin sGrid {
+  @media only screen and (min-width: 576px) { @content; }
+}
+
+@mixin mGrid {
+  @media only screen and (min-width: 768px) { @content; }
+}
+
+@mixin lGrid {
+  @media only screen and (min-width: 992px) { @content; }
+}
+
+@mixin xlGrid {
+  @media only screen and (min-width: 1200px) { @content; }
+}
