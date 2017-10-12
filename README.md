@@ -1,6 +1,43 @@
 RMG-Template v2.2b
 ==================================================
 
+## SASS Directories Structure
+
+scss/
+|-- base/
+|
+|-- helper/
+|
+|-- project/
+|   |-- elements/
+|   |   |-- \_button.scss
+|   |   ...
+|   |   
+|   |-- layouts/
+|   |   |-- \_main-footer.scss
+|   |   |-- \_main-navigation.scss
+|   |   
+|   |-- pages/
+|       |-- 
+|
+|-- temp/
+|
+|-- vendor/
+|
+|-- \_base.scss
+|
+|-- \_helper.scss
+|
+|-- \_project.scss
+|
+|-- \_temp.scss
+|
+|-- \_vendor.scss
+|
+|-- \_main.scss
+
+---
+
 ## Included
 
 jQuery and fallback
@@ -20,6 +57,8 @@ Gulp task for bower assets
 Gulp-uncss
 
 Gulp-plumber
+
+Babel
 
 ---
 
