@@ -50,15 +50,19 @@ Micro clearfix
 
 ## To-dos
 
-HTML5Boilerplate
+gulp-rename (use it with bower)
 
-Gulp task for bower assets
+gulp-util
+
+gulp-filesize (use it with gulp build)
+
+gulp-babel
+
+HTML5Boilerplate
 
 Gulp-uncss
 
 Gulp-plumber
-
-Babel
 
 ---
 
