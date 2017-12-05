@@ -23,6 +23,85 @@ Gulp-plumber
 
 ---
 
+### Notes
+
+input[type=number] {
+  -moz-appearance: textfield;
+  &::-webkit-inner-spin-button { -webkit-appearance: none;}
+  &::-webkit-outer-spin-button { -webkit-appearance: none;}
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+
+}
+
+h1 {  }
+h2 {  }
+h3 {  }
+h4 {  }
+h5 {  }
+h6 {  }
+
+p {  }
+
+strong { font-weight: bold; }
+
+em { font-style: italic; }
+
+ul, ol {
+  li {
+
+  }
+}
+
+ul {
+  & > li {
+    ul {
+      li {
+
+      }
+    }
+  }
+}
+
+ol {
+  & > li {
+    ol {
+      li {
+
+      }
+    }
+  }
+}
+
+table {
+  tr {
+    th {
+
+    }
+
+    td {
+
+    }
+  }
+}
+
+blockquote {
+
+}
+
+dt {
+  font-weight: bold;
+  text-decoration: underline;
+}
+dd {
+  margin: 0;
+  padding: 0 0 0.5em 0;
+}
+
+---
+
 ## Directories Explanation
 
 *base/*
