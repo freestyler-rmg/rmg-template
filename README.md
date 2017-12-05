@@ -60,9 +60,13 @@ gulp-babel
 
 HTML5Boilerplate
 
-Gulp-uncss
+gulp-uncss
 
-Gulp-plumber
+gulp-plumber
+
+gulp-bower (config .bowerrc)
+
+core, config
 
 ---
 
