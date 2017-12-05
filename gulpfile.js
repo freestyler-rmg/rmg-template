@@ -24,6 +24,7 @@ var gulp = require('gulp'),
     debug = require('gulp-debug'),
     autoprefixer = require('gulp-autoprefixer'),
     connect = require('gulp-connect-php'),
+    filesize = require('gulp-filesize'),
     browserSync = require('browser-sync');
 
 
@@ -65,7 +66,7 @@ gulp.task('run-test', ['php-sync'], function(){
 // concatenates any number of CSS and JavaScript files into a single file
 // -------
 gulp.task('useref', function(){
-  return gulp.src('app/*.html')
+  return gulp.src('app/index.html')
     .pipe(useref())
     .pipe(debug({title: 'useref:'}))
     // Minifies only if it's a JavaScript file
@@ -73,6 +74,7 @@ gulp.task('useref', function(){
     // Minifies only if it's a CSS file
     .pipe(gulpIf('*.css', cssnano()))
     .pipe(gulp.dest('dist'))
+    .pipe(filesize())
 });
 
 
