@@ -1,40 +1,52 @@
 RMG-Template v2.2b
 ==================================================
 
+## Minimum Browsers Version
+
+- Internet Explorer 11 and Edge
+- Chrome 45
+- Safari 10
+- Firefox 40 (Extended Releases are not supported)
+
+---
+
 ## SASS Directories Structure
 
-scss/
-|-- base/
+```
+.
++-- scss/
++-- base/
 |
-|-- helper/
++-- helper/
 |
-|-- project/
-|   |-- elements/
-|   |   |-- \_button.scss
++-- project/
+|   +-- elements/
+|   |   +-- \_button.scss
 |   |   ...
 |   |   
-|   |-- layouts/
-|   |   |-- \_main-footer.scss
-|   |   |-- \_main-navigation.scss
+|   +-- layouts/
+|   |   +-- \_main-footer.scss
+|   |   +-- \_main-navigation.scss
 |   |   
-|   |-- pages/
-|       |-- 
+|   +-- pages/
+|       +-- 
 |
-|-- temp/
++-- temp/
 |
-|-- vendor/
++-- vendor/
 |
-|-- \_base.scss
++-- \_base.scss
 |
-|-- \_helper.scss
++-- \_helper.scss
 |
-|-- \_project.scss
++-- \_project.scss
 |
-|-- \_temp.scss
++-- \_temp.scss
 |
-|-- \_vendor.scss
++-- \_vendor.scss
 |
-|-- \_main.scss
++-- \_main.scss
+```
 
 ---
 
@@ -70,113 +82,30 @@ core, config
 
 ---
 
-### Notes
+## Directories Explanation
 
-input[type=number] {
-  -moz-appearance: textfield;
-  &::-webkit-inner-spin-button { -webkit-appearance: none;}
-  &::-webkit-outer-spin-button { -webkit-appearance: none;}
-}
+```
+base/
+default customization (including reset, clearfix)
 
+helper/
+variables, functions, mixin, typography, color, etc.
 
-h1, h2, h3, h4, h5, h6 {
+project/
+elements  -> repeatable... elements (use .e- class naming)
+layouts   -> repeatable... layouts (main header, footer, navigation, etc)
+pages     -> for... pages (use .p- class naming)
+plugins   -> plugins customization (use .js- class naming)
 
-}
+temp/
+temporary folder for colaboration trouble or other what not
 
-h1 {  }
-h2 {  }
-h3 {  }
-h4 {  }
-h5 {  }
-h6 {  }
-
-p {  }
-
-strong { font-weight: bold; }
-
-em { font-style: italic; }
-
-ul, ol {
-  li {
-
-  }
-}
-
-ul {
-  & > li {
-    ul {
-      li {
-
-      }
-    }
-  }
-}
-
-ol {
-  & > li {
-    ol {
-      li {
-
-      }
-    }
-  }
-}
-
-table {
-  tr {
-    th {
-
-    }
-
-    td {
-
-    }
-  }
-}
-
-blockquote {
-
-}
-
-dt {
-  font-weight: bold;
-  text-decoration: underline;
-}
-dd {
-  margin: 0;
-  padding: 0 0 0.5em 0;
-}
+vendor/
+plugins and frameworks and what not from other area of internet
+```
 
 ---
 
-## Directories Explanation
-
-*base/*
-
-default customization (including reset, clearfix)
-
-*helper/*
-
-variables, functions, mixin, typography, color, etc.
-
-*project/*
-
-elements  -> repeatable... elements (use .e- class naming)
-
-layouts   -> repeatable... layouts (main header, footer, navigation, etc)
-
-pages     -> for... pages (use .p- class naming)
-
-plugins   -> plugins customization (use .js- class naming)
-
-*temp/*
-
-temporary folder for colaboration trouble or other what not
-
-*vendor/*
-
-plugins and frameworks and what not from other area of internet
-
-
 ## License
+
 MIT license: http://www.opensource.org/licenses/mit-license.php
