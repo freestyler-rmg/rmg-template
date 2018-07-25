@@ -1,4 +1,6 @@
 (function (global) {
+	var root = this;
+	
 	$(document).ready(function(){
 
 
