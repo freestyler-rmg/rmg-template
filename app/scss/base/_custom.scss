@@ -1,48 +1,5 @@
-*,
-*:before,
-*:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
-}
-
-input[type=number] {
-    -moz-appearance:textfield;
-}
-
-html {
-  font-size: 62.5%;  /* 1rem ~ 10px */
-}
-
-body {
-  //font-family: $basic-font;
-  font-size: 1.3rem;
-  line-height: 1.5;
-  overflow: auto;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
 h1.pic { color: transparent; font-size: 0; text-indent: -9999999px; } /* if you need a heading without text, create another css with name exactly like this and add background pic */
 
-a {
-  text-decoration: none;
-  &:hover, &:active {
-    outline: none;
-  }
-}
-
-img {
-  max-width: 100%;
-  //width: 100%;
-  vertical-align: top;
-}
 
 .hide-text {
   text-indent: 100%;
@@ -50,14 +7,6 @@ img {
   overflow: hidden;
   font-size: 0;
 }
-
-.bg-size-cover {
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
 
 /*
  * http://webdesignerwall.com/tutorials/css-elastic-videos
@@ -80,7 +29,28 @@ img {
   height: 100%;
 }
 
-/* 
+// body.no-scroll {
+//   overflow: hidden;
+// }
+
+html.no-scroll {
+  height: 100vh;
+  overflow: hidden;
+  body {
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+.all-mid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+/*
  * Screen reader only
  */
 .sr-only {
