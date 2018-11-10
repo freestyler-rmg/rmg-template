@@ -11,7 +11,7 @@ h1.pic { color: transparent; font-size: 0; text-indent: -9999999px; } /* if you 
 /*
  * http://webdesignerwall.com/tutorials/css-elastic-videos
  */
-.r-vc, .r-vc {
+.r-vc {
   position: relative;
   padding-bottom: 56.25%;
   padding-top: 30px;
@@ -19,9 +19,9 @@ h1.pic { color: transparent; font-size: 0; text-indent: -9999999px; } /* if you 
   overflow: hidden;
 }
 
-.r-vc iframe, .r-vc iframe,
-.r-vc object, .r-vc object,
-.r-vc embed, .r-vc embed {
+.r-vc iframe,
+.r-vc object,
+.r-vc embed {
   position: absolute;
   top: 0;
   left: 0;
