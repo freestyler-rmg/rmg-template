@@ -3,10 +3,10 @@
  *
  * 01.0 - Initiate
  * 02.0 - Cuztomized Plugins
- * 03.0 - Layouts
- * 04.0 - Pages
- * 05.0 - Elements
- * 06.0 - 
+ * 03.0 - Elements
+ * 04.0 - Components
+ * 05.0 - Layouts
+ * 06.0 - Pages
  * 07.0 - 
  * 08.0 - 
  * 09.0 - 
@@ -18,7 +18,7 @@
  * -----------------------------------------------------------------------------
 /*/
 
-@import "project/layouts/init";
+@import "project/init";
 
 /*/
  z-index list:
@@ -46,19 +46,26 @@
 
 
 /*/
- * 03.0 Layouts
+ * 03.0 Elements
+ * -----------------------------------------------------------------------------
+/*/
+@import "project/elements/button";
+
+
+/*/
+ * 03.0 Components
+ * -----------------------------------------------------------------------------
+/*/
+@import "project/elements/button";
+
+
+
+/*/
+ * 04.0 Layouts
  * -----------------------------------------------------------------------------
 /*/
 @import "project/layouts/main-navigation";
 @import "project/layouts/main-footer";
-
-
-
-/*/
- * 04.0 Elements
- * -----------------------------------------------------------------------------
-/*/
-@import "project/elements/button";
 
 
 
