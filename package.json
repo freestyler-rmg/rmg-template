@@ -8,7 +8,7 @@
     "browser-sync": "^2.26.3",
     "imagemin-cli": "^4.0.0",
     "node-sass-chokidar": "^1.3.4",
-    "parallelshell": "^3.0.2",
+    "parallelshell": "3.0.1",
     "postcss-cli": "^6.0.1",
     "rimraf": "^2.6.2",
     "uglify-js": "^3.4.9"
@@ -24,7 +24,7 @@
     "autoprefixer": "postcss --use autoprefixer --autoprefixer.browsers '> 5%, ie 9' --replace build/css/*",
     "uglify": "mkdir -p dist/js && uglifyjs build/js/*.js -m -o -c dist/js/main.min.js",
     "opt-img": "imagemin build/img dist/img -p",
-    "serve": "browser-sync start --server './build' --files './build/css/*.css, ./build/js/*.js'"
+    "serve": "browser-sync start --server './build' --files './build/*.html, ./build/css/*.css, ./build/js/*.js'"
     ,
     "//": "BUNDLING     ____________________________________________________________________________________",
     "build:css": "yarn run watch-sass && yarn run autoprefixer",
